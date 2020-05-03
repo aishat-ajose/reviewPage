@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class TrendingOrders extends StatefulWidget {
-  String imgPath;
-  String foodName;
-  String price;
-  String unit;
+  final String imgPath;
+  final String foodName;
+  final String price;
+  final String unit;
   TrendingOrders({this.imgPath, this.foodName, this.price, this.unit});
   
   @override

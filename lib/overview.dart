@@ -35,7 +35,10 @@ class _OverviewPageState extends State<OverviewPage> {
 
           SizedBox(height: 10.0,),
 
-          StatisticsChart(),
+          StatisticsChart(
+            weeklyOrdersVsView: [[160,70],[90, 67],[110, 78],[150, 101],[170, 120],[77, 56],[83,45]], 
+            monthlyOrdersVsView:  [[260,140],[190, 97],[190, 78],[210,134]]
+          ),
 
           SizedBox(height: 15.0,),
           
@@ -45,7 +48,7 @@ class _OverviewPageState extends State<OverviewPage> {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    CreateCharts(description:'Sales', value: '\$7364', svgPath: 'assets/11.svg',),
+                    CreateCharts(description:'Views', value: '109', svgPath:"assets/13.svg"),
                     SizedBox(width: 5.0,),
                     CreateCharts(description:'Orders', value: '73', svgPath:"assets/12.svg")
                   ],
@@ -53,7 +56,7 @@ class _OverviewPageState extends State<OverviewPage> {
                 SizedBox(height: 10.0,),
                 Row(
                   children: <Widget>[
-                    CreateCharts(description:'Delivered', value: '19', svgPath:"assets/13.svg"),
+                    CreateCharts(description:'Sales', value: '\$7364', svgPath: 'assets/11.svg',),
                     SizedBox(width: 5.0,),
                     CreateCharts(description:'Completed', value: '57', svgPath:"assets/14.svg")
                   ],

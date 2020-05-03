@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CreateCharts extends StatefulWidget {
-  String description;
-  String value;
-  String svgPath;
+  final String description;
+  final String value;
+  final String svgPath;
   CreateCharts({this.description, this.value, this.svgPath});
 
   @override
