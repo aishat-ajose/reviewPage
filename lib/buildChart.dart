@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class CreateCharts extends StatelessWidget {
+class CreateCharts extends StatefulWidget {
+  String description;
+  String value;
+  String svgPath;
+  CreateCharts({this.description, this.value, this.svgPath});
+
+  @override
+  _CreateChartsState createState() => _CreateChartsState();
+}
+
+class _CreateChartsState extends State<CreateCharts> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,20 +32,23 @@ class CreateCharts extends StatelessWidget {
           children: <Widget>[
             Expanded(flex: 1, child: 
             Padding(
-              padding: const EdgeInsets.only(top:10.0, left:20.0),
+              padding: const EdgeInsets.only(top:20.0, left:10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("Net Earning", style: TextStyle(fontWeight: FontWeight.bold),),
+                  Text(widget.description, style: TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold),),
                   SizedBox(height:5.0),
-                  Text("7,367",style: TextStyle(fontWeight: FontWeight.bold, color: Colors.purple[300]))
+                  Text(widget.value,style: TextStyle(fontWeight: FontWeight.bold, color: Colors.purple[300]))
                 ],
               ),
             ),),
             Expanded(flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.only( left: 10.0, right: 5.0),
-              child: Icon(Icons.table_chart ,size: 60, color: Colors.blue.withOpacity(0.5),),
+            child: Container(
+              height: MediaQuery.of(context).size.height,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: SvgPicture.asset(widget.svgPath),
+              ),
             ),)
           ],
         ),

@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
-class TrendingOrders extends StatelessWidget {
+class TrendingOrders extends StatefulWidget {
+  String imgPath;
+  String foodName;
+  String price;
+  String unit;
+  TrendingOrders({this.imgPath, this.foodName, this.price, this.unit});
+  
+  @override
+  _TrendingOrdersState createState() => _TrendingOrdersState();
+}
+
+class _TrendingOrdersState extends State<TrendingOrders> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,7 +38,7 @@ class TrendingOrders extends StatelessWidget {
                   decoration:BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage("assets/plate1.png"),
+                      image: AssetImage(widget.imgPath),
                     ),
                     
                   ) ,
@@ -38,21 +49,21 @@ class TrendingOrders extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text("Chicken Burger",
+              Text(widget.foodName,
                 style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               Row( 
                 children: <Widget>[
                 Text("Orders  ",style: TextStyle(fontSize: 13.0)),
                 SizedBox(height: 20.0,),
-                Text("75",style: TextStyle(color: Colors.red,fontSize:13.0,fontWeight: FontWeight.bold))
+                Text(widget.unit,style: TextStyle(color: Colors.red,fontSize:13.0,fontWeight: FontWeight.bold))
               ],)
             ],
           ),
           
           SizedBox(width: 15.0,),
 
-          Text("\$30",
+          Text(widget.price,
           style: TextStyle(fontWeight: FontWeight.bold),
           ),
           ],

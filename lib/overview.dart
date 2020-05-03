@@ -26,53 +26,57 @@ class _OverviewPageState extends State<OverviewPage> {
 
       body: ListView(
       scrollDirection: Axis.vertical,
-      padding: EdgeInsets.all(20.0),
+      padding: EdgeInsets.only(left:20.0, right: 20, bottom: 0.0, top: 10.0),
         children: <Widget>[
-          // 1
+
           Text("Overview",
           style: TextStyle(fontWeight:FontWeight.bold,)
           ),
-          // 2
+
           SizedBox(height: 10.0,),
-          // 3
+
           StatisticsChart(),
+
           SizedBox(height: 15.0,),
           
           Container(
-            height: 240.0,
+            height: 230,
             child: Column(
               children: <Widget>[
-                Row(children: <Widget>[
-                  CreateCharts(),SizedBox(width: 5.0,),
-                  CreateCharts()
-                ],),
+                Row(
+                  children: <Widget>[
+                    CreateCharts(description:'Sales', value: '\$7364', svgPath: 'assets/11.svg',),
+                    SizedBox(width: 5.0,),
+                    CreateCharts(description:'Orders', value: '73', svgPath:"assets/12.svg")
+                  ],
+                ),
                 SizedBox(height: 10.0,),
-                Row(children: <Widget>[
-                  CreateCharts(), SizedBox(width: 5.0,),
-                  CreateCharts()
-                ],),
-                 
+                Row(
+                  children: <Widget>[
+                    CreateCharts(description:'Delivered', value: '19', svgPath:"assets/13.svg"),
+                    SizedBox(width: 5.0,),
+                    CreateCharts(description:'Completed', value: '57', svgPath:"assets/14.svg")
+                  ],
+                ),   
               ],
             ),
           ),
-          
-          
-          // 4
-          SizedBox(height: 5.0,),
-          // 5
-          Text("Trending Orders",style: TextStyle(fontWeight:FontWeight.bold,)),
-          // 6
+
           SizedBox(height: 10.0,),
-          // 7
+
+          Text("Trending Orders",style: TextStyle(fontWeight:FontWeight.bold,)),
+
+          SizedBox(height: 10.0,),
+
           Container(
             height:90.0,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-               TrendingOrders(),
-               TrendingOrders(),
-               TrendingOrders(),
-               TrendingOrders(),
+               TrendingOrders(imgPath:'assets/plate1.png', foodName:"Spaghetti", price:'\$30', unit:"70"),
+               TrendingOrders(imgPath:'assets/plate2.png', foodName:"Yam and Chicken", price:'\$50', unit:"40"),
+               TrendingOrders(imgPath:'assets/plate3.png', foodName:"Small Chops", price:'\$60', unit:"32"),
+               TrendingOrders(imgPath:'assets/plate4.png', foodName:"Jollof Rice", price:'\$45', unit:"20"),
               ],
             ),
           )
