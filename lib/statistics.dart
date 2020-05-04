@@ -1,5 +1,8 @@
 import 'package:bezier_chart/bezier_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:reportpage/utils/constants.dart';
+
+// I used bezier_chart plugin here.
 
 class StatisticsChart extends StatefulWidget {
   final List<List<double>> weeklyOrdersVsView;
@@ -39,7 +42,7 @@ class _StatisticsChartState extends State<StatisticsChart> {
             offset: Offset(0.0, 1.0)
           )
         ],
-        color: Colors.blue[100],
+        color: darkerblue,
         borderRadius: BorderRadius.circular(10)
       ),
       child: Column(
@@ -135,7 +138,7 @@ class _StatisticsChartState extends State<StatisticsChart> {
             verticalIndicatorColor: Colors.black26,
             showVerticalIndicator: true,
             verticalIndicatorFixedPosition: false,
-            backgroundColor: Colors.blue[100],
+            backgroundColor: darkerblue,
             footerHeight: 50.0,
             
           ),
@@ -188,7 +191,7 @@ class _StatisticsChartState extends State<StatisticsChart> {
           verticalIndicatorColor: Colors.black26,
           showVerticalIndicator: true,
           verticalIndicatorFixedPosition: false,
-          backgroundColor: Colors.blue[100],
+          backgroundColor: darkerblue,
           footerHeight: 50.0,
           
         ),
